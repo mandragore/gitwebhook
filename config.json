@@ -1,0 +1,18 @@
+[
+    {
+        "_comment": "Example for GitHub",
+        "repo_name": "user/github_repo",
+        "branch": "main",
+        "path": "/projects/github_project",
+        "container_name": "github_container",
+        "secret": "my_github_secret"
+    },
+    {
+        "_comment": "Example for GitLab",
+        "repo_name": "group/gitlab_project",
+        "branch": "production",
+        "path": "/projects/gitlab_project",
+        "container_name": "gitlab_container",
+        "secret": "my_gitlab_secret_token"
+    }
+]

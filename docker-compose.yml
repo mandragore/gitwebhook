@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  webhook-handler:
+    build: .
+    container_name: webhook_handler
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      # Access to Docker socket to restart other containers
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Mount configuration
+      - ./config.json:/app/config.json
+      # Mount projects directory where repositories are located
+      # This assumes your projects are in a 'projects' subfolder or you can change this mapping
+      - ./projects:/projects
+    environment:
+      - PYTHONUNBUFFERED=1
